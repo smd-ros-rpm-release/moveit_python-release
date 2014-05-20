@@ -1,0 +1,12 @@
+Source: ros-hydro-moveit-python
+Section: misc
+Priority: extra
+Maintainer: Michael Ferguson <fergs@unboundedrobotics.com>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin
+Homepage: http://ros.org/wiki/moveit_python
+Standards-Version: 3.9.2
+
+Package: ros-hydro-moveit-python
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-pyassimp, ros-hydro-actionlib, ros-hydro-geometry-msgs, ros-hydro-moveit-msgs, ros-hydro-rospy, ros-hydro-shape-msgs, ros-hydro-tf
+Description: A pure-python interaface to the MoveIt! ROS API.
