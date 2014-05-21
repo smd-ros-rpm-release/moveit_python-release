@@ -1,0 +1,22 @@
+ros-hydro-moveit-python (0.2.2-0precise) precise; urgency=high
+
+  * pass full result in pick and place
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Wed, 21 May 2014 07:00:00 -0000
+
+ros-hydro-moveit-python (0.2.1-0precise) precise; urgency=high
+
+  * fix pyassimp rosdep
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Mon, 19 May 2014 07:00:00 -0000
+
+ros-hydro-moveit-python (0.2.0-0precise) precise; urgency=high
+
+  * Initial release after forking from moveit_utils
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Mon, 19 May 2014 07:00:00 -0000
+
+
