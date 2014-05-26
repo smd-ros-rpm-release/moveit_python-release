@@ -1,3 +1,22 @@
+## moveit_python (indigo) - 0.2.3-0
+
+The packages in the `moveit_python` repository were released into the `indigo` distro by running `/usr/bin/bloom-release moveit_python -r indigo -t indigo` on `Mon, 26 May 2014 07:15:33 -0000`
+
+The `moveit_python` package was released.
+
+Version of package(s) in repository `moveit_python`:
+- rosdistro version: `0.2.2-0`
+- old version: `0.2.2-0`
+- new version: `0.2.3-0`
+
+Versions of tools used:
+- bloom version: `0.5.8`
+- catkin_pkg version: `0.2.2`
+- rosdep version: `0.10.25`
+- rosdistro version: `0.3.4`
+- vcstools version: `0.1.30`
+
+
 ## moveit_python (hydro) - 0.2.3-0
 
 The packages in the `moveit_python` repository were released into the `hydro` distro by running `/usr/bin/bloom-release moveit_python -r hydro -t hydro` on `Mon, 26 May 2014 07:09:10 -0000`
