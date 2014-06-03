@@ -11,9 +11,6 @@
 #    copyright notice, this list of conditions and the following
 #    disclaimer in the documentation and/or other materials provided
 #    with the distribution.
-#  * Neither the name of Unbounded Robotics, Inc. nor the names of its
-#    contributors may be used to endorse or promote products derived
-#    from this software without specific prior written permission.
 #
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 # "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -33,7 +30,7 @@ import actionlib
 from tf.listener import TransformListener
 from geometry_msgs.msg import *
 from moveit_msgs.msg import MoveGroupAction, MoveGroupGoal
-from moveit_msgs.msg import Constraints, JointConstraint, PositionConstraint, BoundingVolume
+from moveit_msgs.msg import Constraints, JointConstraint, PositionConstraint, OrientationConstraint, BoundingVolume
 from shape_msgs.msg import SolidPrimitive
 
 ## @brief Pure python interface to move_group action
@@ -54,6 +51,7 @@ class MoveGroupInterface:
         else:
             self._listener = listener
         self.plan_only = plan_only
+        self.planner_id = None
 
     def moveToJointPosition(self, joints, positions, tolerance = 0.01, start_state = None):
         g = MoveGroupGoal()
@@ -74,6 +72,8 @@ class MoveGroupInterface:
         # 4. fill in path constraints
         # 5. fill in trajectory constraints
         # 6. fill in planner id
+        if self.planner_id:
+            g.request.planner_id = self.planner_id
         # 7. fill in group name
         g.request.group_name = self._group
         # 8. fill in number of planning attempts
@@ -125,6 +125,8 @@ class MoveGroupInterface:
         # 4. fill in path constraints
         # 5. fill in trajectory constraints
         # 6. fill in planner id
+        if self.planner_id:
+            g.request.planner_id = self.planner_id
         # 7. fill in group name
         g.request.group_name = self._group
         # 8. fill in number of planning attempts
@@ -140,3 +142,9 @@ class MoveGroupInterface:
         self._action.send_goal(g)
         self._action.wait_for_result()
         return self._action.get_result()
+
+    ## @brief Sets the planner_id used for all future planning requests.
+    ## @param planner_id The string for the planner id, set to None to clear
+    def setPlannerId(self, planner_id):
+        self.planner_id = str(planner_id)
+
